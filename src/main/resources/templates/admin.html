@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Administración</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { background-color: #e9ecef; }
+        .container { margin-top: 20px; }
+        .jumbotron { background-color: #ffffff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Página de Administración</h1>
+            <p class="lead">¡Bienvenido, Administrador <span th:text="${#authentication.name}"></span>!</p>
+            <hr class="my-4">
+            <p>Aquí puedes realizar tareas administrativas como gestión de usuarios, configuración del sistema, etc.</p>
+            <a th:href="@{/index}" class="btn btn-primary btn-lg">Volver al Dashboard</a> <!-- Apunta a /index -->
+        </div>
+    </div>
+</body>
+</html>

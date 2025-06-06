@@ -1,0 +1,101 @@
+/* src/main/resources/static/css/styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Un gris muy claro */
+    color: #343a40; /* Texto oscuro para buen contraste */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #28a745 !important; /* Verde de la farmacia */
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x400/28a745/ffffff?text=Descubre+Nuestros+Productos'); /* Imagen de fondo y superposición */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.product-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    background-color: #fff;
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Recorta la imagen para que encaje */
+}
+
+.product-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.product-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.product-card .card-text {
+    color: #6c757d;
+}
+
+.product-card .price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #007bff; /* Azul para el precio */
+    margin-top: auto; /* Empuja el precio hacia abajo */
+}
+
+.btn-primary-custom {
+    background-color: #28a745; /* Verde de la farmacia */
+    border-color: #28a745;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: #218838; /* Verde más oscuro al pasar el ratón */
+    border-color: #1e7e34;
+}
+
+footer {
+    background-color: #343a40; /* Gris oscuro */
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}

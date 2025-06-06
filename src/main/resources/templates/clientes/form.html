@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${cliente.id == null ? 'Nuevo Cliente' : 'Editar Cliente'}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { margin-top: 20px; max-width: 600px; }
+        .card { padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div class="container">
+        <div class="card">
+            <h2 class="mb-4" th:text="${cliente.id == null ? 'Agregar Nuevo Cliente' : 'Editar Cliente'}"></h2>
+            
+            <div th:if="${param.errorDniDuplicado}" class="alert alert-danger" role="alert">
+                Ya existe un cliente con ese DNI. Por favor, ingrese un DNI único.
+            </div>
+
+            <form th:action="@{/clientes/save}" th:object="${cliente}" method="post">
+                <input type="hidden" th:field="*{id}" />
+
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" th:field="*{nombre}" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" th:field="*{apellido}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" th:field="*{dni}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" th:field="*{telefono}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" th:field="*{email}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <textarea id="direccion" th:field="*{direccion}" class="form-control"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Guardar Cliente</button>
+                <a th:href="@{/clientes}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
