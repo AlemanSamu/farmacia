@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.farmacia_gestion.FarmaciaGestionApplicationTests" time="14.038" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\JAVAPRUEBA\Farmacia_gestion\target\test-classes;C:\JAVAPRUEBA\Farmacia_gestion\target\classes;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.0\spring-boot-starter-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot\3.5.0\spring-boot-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-context\6.2.7\spring-context-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.0\spring-boot-autoconfigure-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.0\spring-boot-starter-logging-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar;C:\Users\Samuel Aleman\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\Samuel Aleman\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-core\6.2.7\spring-core-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-jcl\6.2.7\spring-jcl-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\Samuel Aleman\.m2\repository\org\webjars\font-awesome\6.5.2\font-awesome-6.5.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.5.0\spring-boot-starter-security-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-aop\6.2.7\spring-aop-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-beans\6.2.7\spring-beans-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-config\6.5.0\spring-security-config-6.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-web\6.5.0\spring-security-web-6.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-expression\6.2.7\spring-expression-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-springsecurity6\3.1.3.RELEASE\thymeleaf-extras-springsecurity6-3.1.3.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.3.RELEASE\thymeleaf-spring6-3.1.3.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.0\spring-boot-starter-web-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.0\spring-boot-starter-json-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.0\jackson-databind-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.0\jackson-annotations-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.0\jackson-core-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.19.0\jackson-datatype-jdk8-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.19.0\jackson-datatype-jsr310-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.19.0\jackson-module-parameter-names-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.0\spring-boot-starter-tomcat-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.41\tomcat-embed-core-10.1.41.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.41\tomcat-embed-el-10.1.41.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.41\tomcat-embed-websocket-10.1.41.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-web\6.2.7\spring-web-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\io\micrometer\micrometer-observation\1.15.0\micrometer-observation-1.15.0.jar;C:\Users\Samuel Aleman\.m2\repository\io\micrometer\micrometer-commons\1.15.0\micrometer-commons-1.15.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-webmvc\6.2.7\spring-webmvc-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.5.0\spring-boot-starter-data-jpa-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.5.0\spring-boot-starter-jdbc-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\zaxxer\HikariCP\6.3.0\HikariCP-6.3.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-jdbc\6.2.7\spring-jdbc-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\hibernate\orm\hibernate-core\6.6.15.Final\hibernate-core-6.6.15.Final.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\Samuel Aleman\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\Samuel Aleman\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\Samuel Aleman\.m2\repository\net\bytebuddy\byte-buddy\1.17.5\byte-buddy-1.17.5.jar;C:\Users\Samuel Aleman\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\Samuel Aleman\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\Samuel Aleman\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\Samuel Aleman\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\data\spring-data-jpa\3.5.0\spring-data-jpa-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\data\spring-data-commons\3.5.0\spring-data-commons-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-orm\6.2.7\spring-orm-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-tx\6.2.7\spring-tx-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-aspects\6.2.7\spring-aspects-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\aspectj\aspectjweaver\1.9.24\aspectjweaver-1.9.24.jar;C:\Users\Samuel Aleman\.m2\repository\com\h2database\h2\2.3.232\h2-2.3.232.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.5.0\spring-boot-starter-thymeleaf-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\projectlombok\lombok\1.18.38\lombok-1.18.38.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-devtools\3.5.0\spring-boot-devtools-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-java8time\3.0.4.RELEASE\thymeleaf-extras-java8time-3.0.4.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\thymeleaf\thymeleaf\3.1.3.RELEASE\thymeleaf-3.1.3.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\ognl\ognl\3.3.4\ognl-3.3.4.jar;C:\Users\Samuel Aleman\.m2\repository\org\javassist\javassist\3.29.0-GA\javassist-3.29.0-GA.jar;C:\Users\Samuel Aleman\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.5.0\spring-boot-starter-test-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-test\3.5.0\spring-boot-test-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.5.0\spring-boot-test-autoconfigure-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\Samuel Aleman\.m2\repository\net\minidev\json-smart\2.5.2\json-smart-2.5.2.jar;C:\Users\Samuel Aleman\.m2\repository\net\minidev\accessors-smart\2.5.2\accessors-smart-2.5.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\assertj\assertj-core\3.27.3\assertj-core-3.27.3.jar;C:\Users\Samuel Aleman\.m2\repository\org\awaitility\awaitility\4.3.0\awaitility-4.3.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\jupiter\junit-jupiter\5.12.2\junit-jupiter-5.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.12.2\junit-jupiter-api-5.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\platform\junit-platform-commons\1.12.2\junit-platform-commons-1.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.12.2\junit-jupiter-params-5.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.12.2\junit-jupiter-engine-5.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\platform\junit-platform-engine\1.12.2\junit-platform-engine-1.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\mockito\mockito-core\5.17.0\mockito-core-5.17.0.jar;C:\Users\Samuel Aleman\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.5\byte-buddy-agent-1.17.5.jar;C:\Users\Samuel Aleman\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Samuel Aleman\.m2\repository\org\mockito\mockito-junit-jupiter\5.17.0\mockito-junit-jupiter-5.17.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\Samuel Aleman\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-test\6.2.7\spring-test-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\xmlunit\xmlunit-core\2.10.1\xmlunit-core-2.10.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-test\6.5.0\spring-security-test-6.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-core\6.5.0\spring-security-core-6.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-crypto\6.5.0\spring-security-crypto-6.5.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Bogota"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="APPLICATION_NAME" value="Farmacia_gestion"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CO"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
+    <property name="sun.java.command" value="C:\Users\Samuel Aleman\AppData\Local\Temp\surefire4780117069531743932\surefirebooter-20250606080403003_3.jar C:\Users\Samuel Aleman\AppData\Local\Temp\surefire4780117069531743932 2025-06-06T08-04-00_462-jvmRun1 surefire-20250606080403003_1tmp surefire_0-20250606080403003_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\JAVAPRUEBA\Farmacia_gestion\target\test-classes;C:\JAVAPRUEBA\Farmacia_gestion\target\classes;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.0\spring-boot-starter-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot\3.5.0\spring-boot-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-context\6.2.7\spring-context-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.0\spring-boot-autoconfigure-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.0\spring-boot-starter-logging-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar;C:\Users\Samuel Aleman\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\Samuel Aleman\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-core\6.2.7\spring-core-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-jcl\6.2.7\spring-jcl-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\Samuel Aleman\.m2\repository\org\webjars\font-awesome\6.5.2\font-awesome-6.5.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.5.0\spring-boot-starter-security-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-aop\6.2.7\spring-aop-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-beans\6.2.7\spring-beans-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-config\6.5.0\spring-security-config-6.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-web\6.5.0\spring-security-web-6.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-expression\6.2.7\spring-expression-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-springsecurity6\3.1.3.RELEASE\thymeleaf-extras-springsecurity6-3.1.3.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.3.RELEASE\thymeleaf-spring6-3.1.3.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.0\spring-boot-starter-web-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.0\spring-boot-starter-json-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.0\jackson-databind-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.0\jackson-annotations-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.0\jackson-core-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.19.0\jackson-datatype-jdk8-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.19.0\jackson-datatype-jsr310-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.19.0\jackson-module-parameter-names-2.19.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.0\spring-boot-starter-tomcat-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.41\tomcat-embed-core-10.1.41.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.41\tomcat-embed-el-10.1.41.jar;C:\Users\Samuel Aleman\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.41\tomcat-embed-websocket-10.1.41.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-web\6.2.7\spring-web-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\io\micrometer\micrometer-observation\1.15.0\micrometer-observation-1.15.0.jar;C:\Users\Samuel Aleman\.m2\repository\io\micrometer\micrometer-commons\1.15.0\micrometer-commons-1.15.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-webmvc\6.2.7\spring-webmvc-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.5.0\spring-boot-starter-data-jpa-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.5.0\spring-boot-starter-jdbc-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\zaxxer\HikariCP\6.3.0\HikariCP-6.3.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-jdbc\6.2.7\spring-jdbc-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\hibernate\orm\hibernate-core\6.6.15.Final\hibernate-core-6.6.15.Final.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\Samuel Aleman\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\Samuel Aleman\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\Samuel Aleman\.m2\repository\net\bytebuddy\byte-buddy\1.17.5\byte-buddy-1.17.5.jar;C:\Users\Samuel Aleman\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\Samuel Aleman\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\Samuel Aleman\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\Samuel Aleman\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\data\spring-data-jpa\3.5.0\spring-data-jpa-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\data\spring-data-commons\3.5.0\spring-data-commons-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-orm\6.2.7\spring-orm-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-tx\6.2.7\spring-tx-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-aspects\6.2.7\spring-aspects-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\aspectj\aspectjweaver\1.9.24\aspectjweaver-1.9.24.jar;C:\Users\Samuel Aleman\.m2\repository\com\h2database\h2\2.3.232\h2-2.3.232.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.5.0\spring-boot-starter-thymeleaf-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\projectlombok\lombok\1.18.38\lombok-1.18.38.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-devtools\3.5.0\spring-boot-devtools-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-java8time\3.0.4.RELEASE\thymeleaf-extras-java8time-3.0.4.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\thymeleaf\thymeleaf\3.1.3.RELEASE\thymeleaf-3.1.3.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\ognl\ognl\3.3.4\ognl-3.3.4.jar;C:\Users\Samuel Aleman\.m2\repository\org\javassist\javassist\3.29.0-GA\javassist-3.29.0-GA.jar;C:\Users\Samuel Aleman\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.5.0\spring-boot-starter-test-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-test\3.5.0\spring-boot-test-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.5.0\spring-boot-test-autoconfigure-3.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\Samuel Aleman\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\Samuel Aleman\.m2\repository\net\minidev\json-smart\2.5.2\json-smart-2.5.2.jar;C:\Users\Samuel Aleman\.m2\repository\net\minidev\accessors-smart\2.5.2\accessors-smart-2.5.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\assertj\assertj-core\3.27.3\assertj-core-3.27.3.jar;C:\Users\Samuel Aleman\.m2\repository\org\awaitility\awaitility\4.3.0\awaitility-4.3.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\jupiter\junit-jupiter\5.12.2\junit-jupiter-5.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.12.2\junit-jupiter-api-5.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\platform\junit-platform-commons\1.12.2\junit-platform-commons-1.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.12.2\junit-jupiter-params-5.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.12.2\junit-jupiter-engine-5.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\junit\platform\junit-platform-engine\1.12.2\junit-platform-engine-1.12.2.jar;C:\Users\Samuel Aleman\.m2\repository\org\mockito\mockito-core\5.17.0\mockito-core-5.17.0.jar;C:\Users\Samuel Aleman\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.5\byte-buddy-agent-1.17.5.jar;C:\Users\Samuel Aleman\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Samuel Aleman\.m2\repository\org\mockito\mockito-junit-jupiter\5.17.0\mockito-junit-jupiter-5.17.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\Samuel Aleman\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\spring-test\6.2.7\spring-test-6.2.7.jar;C:\Users\Samuel Aleman\.m2\repository\org\xmlunit\xmlunit-core\2.10.1\xmlunit-core-2.10.1.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-test\6.5.0\spring-security-test-6.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-core\6.5.0\spring-security-core-6.5.0.jar;C:\Users\Samuel Aleman\.m2\repository\org\springframework\security\spring-security-crypto\6.5.0\spring-security-crypto-6.5.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Samuel Aleman"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\JAVAPRUEBA\Farmacia_gestion"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="windows-1252"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\Samuel Aleman\AppData\Local\Temp\surefire4780117069531743932\surefirebooter-20250606080403003_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
+    <property name="user.name" value="Samuel Aleman"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Samuel Aleman\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Samuel Aleman\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="17.0.12"/>
+    <property name="user.dir" value="C:\JAVAPRUEBA\Farmacia_gestion"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="7784"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="windows-1252"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/SpringToolSuite//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.6.v20250130-0529/jre/bin/server;C:/SpringToolSuite//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.6.v20250130-0529/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\dev\flutter\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Java\jdk-22\bin;C:\Program Files\dotnet\;C:\gradle-8.14.1\bin;C:\Program Files\Java\jdk-21\bin;C:\Users\Samuel Aleman\AppData\Local\Microsoft\WindowsApps;C:\Users\Samuel Aleman\AppData\Local\Programs\Microsoft VS Code\bin;C:\dev\flutter\bin;C:\Users\Samuel Aleman\AppData\Roaming\npm;C:\Program Files\nodejs;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Java\jdk-22\bin;C:\Program Files\Java\jdk-21\bin;;C:\SpringToolSuite;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.12+8-LTS-286"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[Farmacia_gestion] "/>
+  </properties>
+  <testcase name="contextLoads" classname="com.farmacia_gestion.FarmaciaGestionApplicationTests" time="0.742">
+    <system-out><![CDATA[08:04:05.395 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.farmacia_gestion.FarmaciaGestionApplicationTests]: FarmaciaGestionApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:04:05.664 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.farmacia_gestion.FarmaciaGestionApplication for test class com.farmacia_gestion.FarmaciaGestionApplicationTests
+08:04:06.107 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.0)
+
+2025-06-06T08:04:06.972-05:00  INFO 7784 --- [Farmacia_gestion] [           main] c.f.FarmaciaGestionApplicationTests      : Starting FarmaciaGestionApplicationTests using Java 17.0.12 with PID 7784 (started by Samuel Aleman in C:\JAVAPRUEBA\Farmacia_gestion)
+2025-06-06T08:04:06.976-05:00  INFO 7784 --- [Farmacia_gestion] [           main] c.f.FarmaciaGestionApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-06-06T08:04:08.928-05:00  INFO 7784 --- [Farmacia_gestion] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-06T08:04:09.121-05:00  INFO 7784 --- [Farmacia_gestion] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 174 ms. Found 7 JPA repository interfaces.
+2025-06-06T08:04:10.291-05:00  INFO 7784 --- [Farmacia_gestion] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-06T08:04:10.516-05:00  INFO 7784 --- [Farmacia_gestion] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-06T08:04:10.626-05:00  INFO 7784 --- [Farmacia_gestion] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-06T08:04:11.890-05:00  INFO 7784 --- [Farmacia_gestion] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-06T08:04:11.977-05:00  INFO 7784 --- [Farmacia_gestion] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-06T08:04:12.432-05:00  INFO 7784 --- [Farmacia_gestion] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:farmaciadb user=SA
+2025-06-06T08:04:12.435-05:00  INFO 7784 --- [Farmacia_gestion] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-06T08:04:12.506-05:00  WARN 7784 --- [Farmacia_gestion] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-06T08:04:12.559-05:00  INFO 7784 --- [Farmacia_gestion] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-06T08:04:14.990-05:00  INFO 7784 --- [Farmacia_gestion] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    drop table if exists clientes cascade 
+Hibernate: 
+    drop table if exists detalle_ventas cascade 
+Hibernate: 
+    drop table if exists productos cascade 
+Hibernate: 
+    drop table if exists proveedores cascade 
+Hibernate: 
+    drop table if exists roles cascade 
+Hibernate: 
+    drop table if exists user_roles cascade 
+Hibernate: 
+    drop table if exists users cascade 
+Hibernate: 
+    drop table if exists ventas cascade 
+Hibernate: 
+    create table clientes (
+        id bigint generated by default as identity,
+        apellido varchar(255),
+        direccion varchar(255),
+        dni varchar(255) unique,
+        email varchar(255),
+        nombre varchar(255) not null,
+        telefono varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table detalle_ventas (
+        cantidad integer not null,
+        precio_unitario float(53) not null,
+        subtotal float(53) not null,
+        id bigint generated by default as identity,
+        producto_id bigint not null,
+        venta_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table productos (
+        fecha_vencimiento date,
+        precio float(53) not null,
+        stock integer not null,
+        id bigint generated by default as identity,
+        proveedor_id bigint,
+        categoria varchar(255),
+        descripcion varchar(255),
+        nombre varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table proveedores (
+        id bigint generated by default as identity,
+        contacto varchar(255),
+        direccion varchar(255),
+        email varchar(255),
+        nombre varchar(255) not null unique,
+        telefono varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table roles (
+        id bigint generated by default as identity,
+        name varchar(255) not null unique,
+        primary key (id)
+    )
+Hibernate: 
+    create table user_roles (
+        role_id bigint not null,
+        user_id bigint not null,
+        primary key (role_id, user_id)
+    )
+Hibernate: 
+    create table users (
+        id bigint generated by default as identity,
+        first_name varchar(255),
+        last_name varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null unique,
+        primary key (id)
+    )
+Hibernate: 
+    create table ventas (
+        total float(53) not null,
+        cliente_id bigint,
+        fecha_venta timestamp(6) not null,
+        id bigint generated by default as identity,
+        primary key (id)
+    )
+Hibernate: 
+    alter table if exists detalle_ventas 
+       add constraint FKnunx2ycrr6jfyphwmmifo6lgx 
+       foreign key (producto_id) 
+       references productos
+Hibernate: 
+    alter table if exists detalle_ventas 
+       add constraint FK2dn1sdhrbmva44wbs9fy6l7mn 
+       foreign key (venta_id) 
+       references ventas
+Hibernate: 
+    alter table if exists productos 
+       add constraint FK4s80lxlx2fkci25fcx4r0nbex 
+       foreign key (proveedor_id) 
+       references proveedores
+Hibernate: 
+    alter table if exists user_roles 
+       add constraint FKh8ciramu9cc9q3qcqiv4ue8a6 
+       foreign key (role_id) 
+       references roles
+Hibernate: 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+Hibernate: 
+    alter table if exists ventas 
+       add constraint FK4dgjhccl2uuo8swmxlxb4ipb5 
+       foreign key (cliente_id) 
+       references clientes
+2025-06-06T08:04:15.115-05:00  INFO 7784 --- [Farmacia_gestion] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-06T08:04:15.952-05:00  WARN 7784 --- [Farmacia_gestion] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-06T08:04:16.004-05:00  INFO 7784 --- [Farmacia_gestion] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-06-06T08:04:16.436-05:00  INFO 7784 --- [Farmacia_gestion] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-06T08:04:16.439-05:00  WARN 7784 --- [Farmacia_gestion] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-06T08:04:17.110-05:00  INFO 7784 --- [Farmacia_gestion] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:farmaciadb'
+2025-06-06T08:04:17.228-05:00  INFO 7784 --- [Farmacia_gestion] [           main] c.f.FarmaciaGestionApplicationTests      : Started FarmaciaGestionApplicationTests in 11.158 seconds (process running for 13.633)
+Iniciando carga de datos de prueba...
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+Hibernate: 
+    insert 
+    into
+        roles
+        (name, id) 
+    values
+        (?, default)
+Rol 'ADMINISTRADOR' creado.
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+Hibernate: 
+    insert 
+    into
+        roles
+        (name, id) 
+    values
+        (?, default)
+Rol 'VENDEDOR' creado.
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    insert 
+    into
+        users
+        (first_name, last_name, password, username, id) 
+    values
+        (?, ?, ?, ?, default)
+Usuario 'admin' creado con rol ADMINISTRADOR.
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    insert 
+    into
+        users
+        (first_name, last_name, password, username, id) 
+    values
+        (?, ?, ?, ?, default)
+Usuario 'user' creado con rol VENDEDOR.
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    insert 
+    into
+        users
+        (first_name, last_name, password, username, id) 
+    values
+        (?, ?, ?, ?, default)
+Usuario 'maria' creado con rol VENDEDOR.
+Cargando proveedores...
+Hibernate: 
+    insert 
+    into
+        proveedores
+        (contacto, direccion, email, nombre, telefono, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        proveedores
+        (contacto, direccion, email, nombre, telefono, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        proveedores
+        (contacto, direccion, email, nombre, telefono, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Proveedores guardados.
+Cargando productos...
+Hibernate: 
+    insert 
+    into
+        productos
+        (categoria, descripcion, fecha_vencimiento, nombre, precio, proveedor_id, stock, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        productos
+        (categoria, descripcion, fecha_vencimiento, nombre, precio, proveedor_id, stock, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        productos
+        (categoria, descripcion, fecha_vencimiento, nombre, precio, proveedor_id, stock, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        productos
+        (categoria, descripcion, fecha_vencimiento, nombre, precio, proveedor_id, stock, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        productos
+        (categoria, descripcion, fecha_vencimiento, nombre, precio, proveedor_id, stock, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        productos
+        (categoria, descripcion, fecha_vencimiento, nombre, precio, proveedor_id, stock, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Productos guardados.
+Cargando clientes...
+Hibernate: 
+    insert 
+    into
+        clientes
+        (apellido, direccion, dni, email, nombre, telefono, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        clientes
+        (apellido, direccion, dni, email, nombre, telefono, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        clientes
+        (apellido, direccion, dni, email, nombre, telefono, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+Clientes guardados.
+Cargando ventas...
+Hibernate: 
+    insert 
+    into
+        ventas
+        (cliente_id, fecha_venta, total, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        detalle_ventas
+        (cantidad, precio_unitario, producto_id, subtotal, venta_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        detalle_ventas
+        (cantidad, precio_unitario, producto_id, subtotal, venta_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Venta 1 guardada con detalles.
+Hibernate: 
+    insert 
+    into
+        ventas
+        (cliente_id, fecha_venta, total, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        detalle_ventas
+        (cantidad, precio_unitario, producto_id, subtotal, venta_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        detalle_ventas
+        (cantidad, precio_unitario, producto_id, subtotal, venta_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Venta 2 guardada con detalles.
+Hibernate: 
+    insert 
+    into
+        ventas
+        (cliente_id, fecha_venta, total, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        detalle_ventas
+        (cantidad, precio_unitario, producto_id, subtotal, venta_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        detalle_ventas
+        (cantidad, precio_unitario, producto_id, subtotal, venta_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Venta 3 (sin cliente) guardada con detalles.
+Carga de datos de prueba finalizada exitosamente.
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+]]></system-out>
+  </testcase>
+</testsuite>

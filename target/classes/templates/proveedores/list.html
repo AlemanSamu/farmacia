@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Proveedores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { margin-top: 20px; }
+        .table th, .table td { vertical-align: middle; }
+    </style>
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div class="container">
+        <h2 class="my-4">Gestión de Proveedores</h2>
+
+        <!-- Formulario de búsqueda -->
+        <form th:action="@{/proveedores/search}" method="get" class="form-inline mb-3">
+            <input type="text" name="nombre" class="form-control mr-2" placeholder="Buscar por nombre">
+            <button type="submit" class="btn btn-outline-primary mr-2">Buscar</button>
+            <a th:href="@{/proveedores}" class="btn btn-outline-secondary">Limpiar Búsqueda</a>
+        </form>
+
+        <a th:href="@{/proveedores/new}" class="btn btn-success mb-3">Agregar Nuevo Proveedor</a>
+
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Contacto</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th>Dirección</th>
+                    <th sec:authorize="hasRole('ADMINISTRADOR')">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="proveedor : ${proveedores}">
+                    <td th:text="${proveedor.id}"></td>
+                    <td th:text="${proveedor.nombre}"></td>
+                    <td th:text="${proveedor.contacto}"></td>
+                    <td th:text="${proveedor.telefono}"></td>
+                    <td th:text="${proveedor.email}"></td>
+                    <td th:text="${proveedor.direccion}"></td>
+                    <td sec:authorize="hasRole('ADMINISTRADOR')">
+                        <a th:href="@{/proveedores/edit/{id}(id=${proveedor.id})}" class="btn btn-info btn-sm mr-2">Editar</a>
+                        <a th:href="@{/proveedores/delete/{id}(id=${proveedor.id})}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('¿Estás seguro de que quieres eliminar este proveedor y sus productos asociados?');">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

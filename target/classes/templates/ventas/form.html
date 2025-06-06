@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Nueva Venta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { margin-top: 20px; }
+        .card { padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .product-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .product-item select {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .product-item input[type="number"] {
+            width: 80px;
+            margin-right: 10px;
+        }
+        .product-item .price-display {
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div class="container">
+        <div class="card">
+            <h2 class="mb-4">Registrar Nueva Venta</h2>
+
+            <div th:if="${success}" class="alert alert-success" role="alert">
+                <span th:text="${success}"></span>
+            </div>
+            <div th:if="${error}" class="alert alert-danger" role="alert">
+                <span th:text="${error}"></span>
+            </div>
+
+            <form th:action="@{/ventas/save}" method="post">
+                <div class="form-group">
+                    <label for="cliente">Cliente:</label>
+                    <select id="cliente" name="clienteId" class="form-control">
+                        <option value="">Cliente Final (Opcional)</option>
+                        <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nombre + ' ' + cliente.apellido}"></option>
+                    </select>
+                </div>
+
+                <hr>
+                <h5>Productos de la Venta</h5>
+                <div id="productos-container">
+                    <!-- Los items de producto se añadirán aquí dinámicamente -->
+                    <div class="product-item">
+                        <select name="producto_0" class="form-control product-select" data-index="0" required>
+                            <option value="">Seleccione un Producto</option>
+                            <option th:each="prod : ${productos}" 
+                                    th:value="${prod.id}" 
+                                    th:data-price="${prod.precio}" 
+                                    th:data-stock="${prod.stock}"
+                                    th:text="${prod.nombre + ' (Stock: ' + prod.stock + ')'}"></option>
+                        </select>
+                        <input type="number" name="cantidad_0" class="form-control quantity-input" placeholder="Cantidad" min="1" value="1" required>
+                        <span class="price-display">$0.00</span>
+                        <button type="button" class="btn btn-danger btn-sm remove-product">X</button>
+                    </div>
+                </div>
+                <button type="button" id="add-product-btn" class="btn btn-info mb-3">Agregar Otro Producto</button>
+                <hr>
+
+                <h4 class="text-right">Total: <span id="total-venta">$0.00</span></h4>
+
+                <button type="submit" class="btn btn-primary">Registrar Venta</button>
+                <a th:href="@{/ventas}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let productCounter = 0;
+        const productosData = {}; // Objeto para almacenar precios y stock de productos
+
+        // Cargar datos de productos desde Thymeleaf a JavaScript
+        $(document).ready(function() {
+            $('.product-select option').each(function() {
+                const id = $(this).val();
+                if (id) {
+                    productosData[id] = {
+                        price: parseFloat($(this).data('price')),
+                        stock: parseInt($(this).data('stock'))
+                    };
+                }
+            });
+            updateTotal(); // Calcular el total inicial
+        });
+
+        $('#add-product-btn').on('click', function() {
+            productCounter++;
+            const newProductItem = `
+                <div class="product-item">
+                    <select name="producto_${productCounter}" class="form-control product-select" data-index="${productCounter}" required>
+                        <option value="">Seleccione un Producto</option>
+                        ${$('.product-select:first option').html()}
+                    </select>
+                    <input type="number" name="cantidad_${productCounter}" class="form-control quantity-input" placeholder="Cantidad" min="1" value="1" required>
+                    <span class="price-display">$0.00</span>
+                    <button type="button" class="btn btn-danger btn-sm remove-product">X</button>
+                </div>
+            `;
+            $('#productos-container').append(newProductItem);
+            updateTotal();
+        });
+
+        $(document).on('click', '.remove-product', function() {
+            $(this).closest('.product-item').remove();
+            updateTotal();
+        });
+
+        $(document).on('change', '.product-select', function() {
+            const selectedProductId = $(this).val();
+            const productData = productosData[selectedProductId];
+            const priceDisplay = $(this).siblings('.price-display');
+            
+            if (productData) {
+                priceDisplay.text('$' + productData.price.toFixed(2));
+            } else {
+                priceDisplay.text('$0.00');
+            }
+            updateTotal();
+        });
+
+        $(document).on('input', '.quantity-input', function() {
+            const quantity = parseInt($(this).val());
+            const productSelect = $(this).siblings('.product-select');
+            const selectedProductId = productSelect.val();
+            
+            if (selectedProductId && productosData[selectedProductId]) {
+                const stock = productosData[selectedProductId].stock;
+                if (quantity > stock) {
+                    alert('La cantidad excede el stock disponible (' + stock + ').');
+                    $(this).val(stock); // Ajustar a la cantidad máxima
+                } else if (quantity < 1 && $(this).val() != "") {
+                    $(this).val(1); // Mínimo 1
+                }
+            } else if (quantity < 1 && $(this).val() != "") {
+                 $(this).val(1); // Mínimo 1 incluso sin producto seleccionado
+            }
+            updateTotal();
+        });
+
+        function updateTotal() {
+            let totalVenta = 0;
+            $('.product-item').each(function() {
+                const productSelect = $(this).find('.product-select');
+                const quantityInput = $(this).find('.quantity-input');
+                const selectedProductId = productSelect.val();
+                const quantity = parseInt(quantityInput.val()) || 0;
+
+                if (selectedProductId && productosData[selectedProductId]) {
+                    const price = productosData[selectedProductId].price;
+                    totalVenta += price * quantity;
+                }
+            });
+            $('#total-venta').text('$' + totalVenta.toFixed(2));
+        }
+    </script>
+</body>
+</html>

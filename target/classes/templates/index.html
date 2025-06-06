@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Principal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { background-color: #e9ecef; }
+        .container { margin-top: 20px; }
+        .jumbotron { background-color: #ffffff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Bienvenido al Sistema de Farmacia</h1>
+            <p class="lead" th:text="'Hola, ' + ${#authentication.name} + '!'"></p>
+
+            <div sec:authorize="hasRole('ADMINISTRADOR')">
+                <p class="text-success">¡Eres un Administrador!</p>
+                <a th:href="@{/admin}" class="btn btn-info btn-lg">Ir a la Página de Administración</a>
+            </div>
+
+            <div sec:authorize="hasRole('EMPLEADO')">
+                <p class="text-primary">Tu rol es Empleado.</p>
+            </div>
+
+            <hr class="my-4">
+            <p>Aquí puedes gestionar los diferentes módulos del sistema.</p>
+            <a th:href="@{/productos}" class="btn btn-primary mr-2">Gestión de Productos</a>
+            <a th:href="@{/proveedores}" class="btn btn-primary mr-2">Gestión de Proveedores</a>
+            <a th:href="@{/clientes}" class="btn btn-primary mr-2">Gestión de Clientes</a>
+            <a th:href="@{/ventas}" class="btn btn-primary">Gestión de Ventas</a>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Ventas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { margin-top: 20px; }
+        .table th, .table td { vertical-align: middle; }
+    </style>
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div class="container">
+        <h2 class="my-4">Gestión de Ventas</h2>
+
+        <!-- Formulario de búsqueda -->
+        <form th:action="@{/ventas/search}" method="get" class="form-inline mb-3">
+            <input type="text" name="clienteNombre" class="form-control mr-2" placeholder="Buscar por nombre de cliente">
+            <button type="submit" class="btn btn-outline-primary mr-2">Buscar</button>
+            <a th:href="@{/ventas}" class="btn btn-outline-secondary">Limpiar Búsqueda</a>
+        </form>
+
+        <a th:href="@{/ventas/new}" class="btn btn-success mb-3">Registrar Nueva Venta</a>
+
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID Venta</th>
+                    <th>Fecha y Hora</th>
+                    <th>Cliente</th>
+                    <th>Total</th>
+                    <th>Detalles</th>
+                    <th sec:authorize="hasRole('ADMINISTRADOR')">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="venta : ${ventas}">
+                    <td th:text="${venta.id}"></td>
+                    <td th:text="${#temporals.format(venta.fechaVenta, 'dd-MM-yyyy HH:mm')}"></td>
+                    <td th:text="${venta.cliente != null ? venta.cliente.nombre + ' ' + venta.cliente.apellido : 'Cliente Final'}"></td>
+                    <td th:text="${#numbers.formatCurrency(venta.total)}"></td>
+                    <td>
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" th:data-target="${'#detailsModal' + venta.id}">
+                            Ver Detalles
+                        </button>
+
+                        <!-- Modal de Detalles de Venta -->
+                        <div class="modal fade" th:id="${'detailsModal' + venta.id}" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="detailsModalLabel">Detalles de Venta #<span th:text="${venta.id}"></span></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong>Fecha:</strong> <span th:text="${#temporals.format(venta.fechaVenta, 'dd-MM-yyyy HH:mm')}"></span></p>
+                                        <p><strong>Cliente:</strong> <span th:text="${venta.cliente != null ? venta.cliente.nombre + ' ' + venta.cliente.apellido : 'Cliente Final'}"></span></p>
+                                        <hr>
+                                        <h6>Productos:</h6>
+                                        <table class="table table-sm table-bordered">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Producto</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Precio Unitario</th>
+                                                    <th>Subtotal</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="detalle : ${venta.detalles}">
+                                                    <td th:text="${detalle.producto.nombre}"></td>
+                                                    <td th:text="${detalle.cantidad}"></td>
+                                                    <td th:text="${#numbers.formatCurrency(detalle.precioUnitario)}"></td>
+                                                    <td th:text="${#numbers.formatCurrency(detalle.subtotal)}"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h5 class="text-right mt-3">Total Venta: <span th:text="${#numbers.formatCurrency(venta.total)}"></span></h5>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td sec:authorize="hasRole('ADMINISTRADOR')">
+                        <a th:href="@{/ventas/delete/{id}(id=${venta.id})}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('¿Estás seguro de que quieres eliminar esta venta? Esta acción es irreversible y no restaurará el stock.');">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

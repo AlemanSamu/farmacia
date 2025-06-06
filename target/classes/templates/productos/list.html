@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { margin-top: 20px; }
+        .table th, .table td { vertical-align: middle; }
+    </style>
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div class="container">
+        <h2 class="my-4">Gestión de Productos</h2>
+
+        <!-- Formulario de búsqueda -->
+        <form th:action="@{/productos/search}" method="get" class="form-inline mb-3">
+            <input type="text" name="nombre" class="form-control mr-2" placeholder="Buscar por nombre">
+            <button type="submit" class="btn btn-outline-primary mr-2">Buscar</button>
+            <a th:href="@{/productos}" class="btn btn-outline-secondary">Limpiar Búsqueda</a>
+            <a th:href="@{/productos/low-stock}" class="btn btn-warning ml-auto">Productos con Poco Stock</a>
+        </form>
+        
+        <a th:href="@{/productos/new}" class="btn btn-success mb-3">Agregar Nuevo Producto</a>
+
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Categoría</th>
+                    <th>Vencimiento</th>
+                    <th>Proveedor</th>
+                    <th sec:authorize="hasRole('ADMINISTRADOR')">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="producto : ${productos}">
+                    <td th:text="${producto.id}"></td>
+                    <td th:text="${producto.nombre}"></td>
+                    <td th:text="${producto.descripcion}"></td>
+                    <td th:text="${producto.precio}"></td>
+                    <td th:text="${producto.stock}" th:classappend="${producto.stock le 10 ? 'table-danger' : ''}"></td>
+                    <td th:text="${producto.categoria}"></td>
+                    <td th:text="${producto.fechaVencimiento}"></td>
+                    <td th:text="${producto.proveedor != null ? producto.proveedor.nombre : 'N/A'}"></td>
+                    <td sec:authorize="hasRole('ADMINISTRADOR')">
+                        <a th:href="@{/productos/edit/{id}(id=${producto.id})}" class="btn btn-info btn-sm mr-2">Editar</a>
+                        <a th:href="@{/productos/delete/{id}(id=${producto.id})}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('¿Estás seguro de que quieres eliminar este producto?');">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
